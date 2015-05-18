@@ -1,0 +1,252 @@
+/** A catalog that lists the items available in inventory.
+ *  <P>
+ *  Taken from Core Servlets and JavaServer Pages 2nd Edition
+ *  from Prentice Hall and Sun Microsystems Press,
+ *  http://www.coreservlets.com/.
+ *  &copy; 2003 Marty Hall; may be freely used or adapted.
+ *  This catalog has every item listed that is required for assignment
+ */
+
+public class Catalog {  // This would come from a database in real life.
+  // We use a static table for ease of testing and deployment.
+  // See JDBC chapters for info on using databases in
+  // servlets and JSP pages.
+
+
+  private static CatalogItem[] items =
+    { new CatalogItem
+      ("Macbook012",
+       "<I>Apple MacBook Pro</I> " + 
+         "by Apple",
+       "<UL><LI> 2.5 GHz Dual-Core intel Core i5 processor \n" +
+         "<LI> 4 GB DDR3 RAM \n" +
+         "<LI> 500 GB Harddrive \n" +
+         "<LI> 13.3 inch LED-backlit display \n" +
+         "<LI> Intel HD graphics 4000 \n" +
+         "</UL>",
+       1099.99),
+      new CatalogItem  
+        ("ASUS013",
+         "<I> X551T </I>" + 
+          "By ASUS",
+         "<UL><LI> 15 inch Display \n"+
+          "<LI> Intel Celeron 2 GHz \n"+
+          "<LI> Wireless 802.11N \n"+
+          "<LI> 1x USB 2.0, HDMI VGA \n"+
+          "<LI> 4 GB DDR3 \n"+
+          "</UL>",
+         249.85), 
+      new CatalogItem
+        ("VAIO014",
+         "<I>VAIO EL2 </I>" + " by Sony",
+         "<UL><LI> AMD E series processor 1.65 GHz \n "+
+          "<LI> 4 GB DDR3 RAM \n"+
+          "<LI> 320 GB 5400 RPM Hard drive \n"+
+          "<LI> 15.5 inch screen, AMD Radeon HD 6320 \n"+
+          "<LI>Windows 7 \n"+
+          "</UL>",
+         550.99),
+      new CatalogItem
+        ("Lenovo015",
+         "<I> IdeaPad LED Notebook </I>" + " by Lenovo",
+         "<UL><LI> 15.6 inch touchscreen LED display \n " +
+          "<LI> 8 GB memory \n" +
+          "<LI> AMD 2 GHz processor \n " +
+          "<LI> Touch and reversible screen \n" +
+          "<LI> 10 hour average battery life \n" +
+          "<LI> Windows 8.1 operating system \n" +
+          "</UL>",
+         546.53),
+      new CatalogItem
+        ("Droid MAXX001",
+         "<I>Motorola DROID MAXX Android 4.4.2</I>",
+         "<UL><LI> X8 Computing system \n" +
+          "<LI> Its powerful battery outlasts others \n" +
+          "<LI>It has a seamless design reinforced by Kevlar\n " +
+          "<LI> Gives you what you expect from Droids \n " +
+          "<LI> Nominated for Best Phone of the Year \n "+
+          "</UL>",
+         154.90), 
+      new CatalogItem
+        ("VAIO014",
+         "<I>VAIO EL2 </I>" + " by Sony",
+         "<UL><LI> AMD E series processor 1.65 GHz \n "+
+          "<LI> 4 GB DDR3 RAM \n"+
+          "<LI> 320 GB 5400 RPM Hard drive \n"+
+          "<LI> 15.5 inch screen, AMD Radeon HD 6320 \n"+
+          "<LI>Windows 7 \n"+
+	        "</UL>",
+         550.99),
+        new CatalogItem
+        ("Lenovo015",
+         "<I> IdeaPad LED Notebook </I>" + " by Lenovo",
+         "<UL><LI> 15.6 inch touchscreen LED display \n " +
+          "<LI> 8 GB memory \n" +
+          "<LI> AMD 2 GHz processor \n " +
+          "<LI> Touch and reversible screen \n" +
+          "<LI> 10 hour average battery life \n" +
+          "<LI> Windows 8.1 operating system \n" +
+          "</UL>",
+         546.53),
+        new CatalogItem
+        ("Droid MAXX001",
+         "<I>Motorola DROID MAXX Android 4.4.2</I>",
+         "<UL><LI> X8 Computing system \n" +
+          "<LI> Its powerful battery outlasts others \n" +
+          "<LI>It has a seamless design reinforced by Kevlar\n " +
+          "<LI> Gives you what you expect from Droids \n " +
+          "<LI> Nominated for Best Phone of the Year \n "+
+          "</UL>",
+         154.90),   
+        new CatalogItem
+        ("MOTOX002",
+         "<I>Motorola Moto X 2nd Generation</I> ",
+         "<UL><LI> 1080P HW edge to edge display \n" +
+          "<LI> Has a sleek curved metal frame that fits comfortably anywhere \n" +
+          "<LI>Has intregrated voice control commands \n" +
+          "<LI>Thorough cell coverage \n" +
+          "<LI> This phones allows you to do whatever you want to do \n" +
+          "</UL>",
+         99.99),
+        new CatalogItem
+        ("iPhone5S003",
+         "<I>Apple iPhone5S</I>" + " by Apple",
+         "<UL>LI> Touch ID fingerprint indentity sensor \n " +
+          "<LI> A7 and M7 chips for better images and processing \n " +
+          "<LI> 8-megapixel iSight Camera \n " +
+          "<LI> Fast LTE Wireless \n" +
+          "<LI> Includes 90 day free warranty \n " +
+          "<LI> Comes with charger, earbud headphones, USB cable\n" +
+          "</UL>",
+         99.99),
+        new CatalogItem
+        ("iPhone5C004",
+         "<I> Apple iPhone 5C </I>" + " by Apple",
+         "<UL><LI> Touch ID fingerpring indentity sensor " +
+          "<LI> A7 and M7 chips for better images and processing\n" +
+          "<LI> 8-megapixel iSight camera \n " +
+          "<LI> Fast LTE wireless \n" +
+          "<LI> Includes 90 day free warranty \n " +
+          "<LI> Different colors available! \n " +
+          "<LI> Comes with charger, earbud headphones, USB cable \n" +
+          "</UL>",
+         99.99),
+        new CatalogItem
+        ("GalaxyS3005",
+         "Galaxy S3 by Samsung",
+         "<UL><LI> This phone comes loaded with features. \n" +
+          "<LI> GPS, Bluetooth technology, internet browsers \n"+
+          "<LI> 8.0 Megapixel digital camera \n "+
+          "<LI> 4.8 inch touchscreen \n" +
+          "<LI> 16 gb storage capacity \n" +
+          "<LI> Voice command options \n" +
+          "</UL>",
+         149.99),
+        new CatalogItem
+        ("GalaxyS4006",
+         "<I> Galaxy S3 </I>" + " by Samsung",
+         "<UL><LI> This phone comes loaded with features. \n " +
+          "<LI> GPS, Bluetooth technology, internet browsers \n" +
+          "<LI> 8.0 Megapixel digital camera \n " +
+          "<LI> 4.8 inch touchscreen \n" +
+          "<LI> 16 gb storage capacity \n" +
+          "<LI> Voice command options \n" +
+          "</UL>",
+         149.99),
+        new CatalogItem
+        ("Kindle007",
+         "<I>Amazon Kindle </I>" ,
+          "<UL><LI> 6 inch E-Ink display \n " +
+          "<LI> Reads ike real paper with no glare \n " +
+          "<LI> Weighs less than 6 ounces - lighter than a paperback book \n " +
+          "<LI> Up to one month batter life on single charge \n" +
+          "<LI> Downloads books ins econds with WIFI \n" +
+          "</UL>",
+         42.95),
+        new CatalogItem
+        ("NEXUS008",
+         "<I>Google NExus 7 FHD Tablet</I> ",
+         "<UL><LI> World's first Android 4.1 Jelly Bean tablet \n" +
+          "<LI> World's first 7 quad-core tabley delivers an advanced expereince. \n " +
+          "<LI> 9.5 hours of battery life. \n" +
+          "<LI> 1 GB RAM, 16GB Memory \n " +
+          "<LI> Has a textured tactile desgin for enhanced comfort \n" +
+          "</UL>",
+         199.99),
+        new CatalogItem
+        ("Surface009",
+         "<I> Surface R T</I>" +" By Microsoft",
+         "<UL><LI> Windows RT  \n " +
+          "<LI> 10.6 inch ClearType HD display \n" +
+          "<LI> 32 GB Storage, 2 GB Ram, up to 8 hours battery life \n " +
+          "<LI> Two 720p HD Lifecams, front and rear \n" +
+          "<LI> WIFI, blueooth, ambient light sensor \n " +
+          "<LI> 7-15 day idle life \n" +
+          "</UL>",
+         299.85),
+        new CatalogItem
+        ("Galaxy010",
+         "<I> Galaxy Tab </I>" + " by Samsung",
+         "<UL><LI> Super AMOLED display (1500x2560) \n " +
+          "<LI> Our thinnest and ightest tablet yet \n" +
+          "<LI> Fingerprint scanner, multiwindow capabilities \n " +
+          "<LI> Up to 9 hours battery life \n" +
+          "<LI> Includes 90 day free warranty \n" +
+          "</UL>",
+         499.99),
+        new CatalogItem
+        ("iPad011",
+         "<I> iPad S3 </I>" + " by Apple",
+         "<UL><LI> Apple iOS7 with Apple A5 1 GHz \n " +
+          "<LI> integrated 16GB \n" +
+          "<LI> Bluetooth, wifi capabilities \n " +
+          "<LI> Front and rear camera \n" +
+          "<LI> 10 hour average battery life \n" +
+          "<LI> Voice command options \n" +
+          "</UL>",
+         349.99),
+        new CatalogItem
+        ("Panasonic016",
+         "<I> Panasonic VIER A </I> ",
+         "<UL><LI> 32 inch display \n" +
+          "<LI> 720p 60 Hz LCD \n " +
+          "<LI> USB port \n" +
+          "<LI> 2 HDMI ports \n" +
+          "<LI> Comes with TV stand \n" +
+          "</UL>",
+         249.99),
+        new CatalogItem
+        ("Samsung017",
+         "<I> Samsung UN32EH </I> ",
+         "<UL><LI> 32 inch display \n" +
+          "<LI> 1080p 60 Hz LCD \n" +
+          "<LI> USB port \n" +
+          "<LI> 2 HDMI ports \n" +
+          "<LI> Comes with TV stand and remote control \n" +
+          "</UL>",
+         269.99),
+        new CatalogItem
+        ("Sony018",
+         "<I> BRAVIA KDL </I> by Sony",
+         "<UL><LI> 720 HD clarity \n " +
+          "<LI> Edge LED backlight and thin design \n" +
+          "<LI> USB port \n" +
+          "<LI> 2 HDMI ports \n" +
+          "</UL>",
+         319.99),
+        };
+
+  public static CatalogItem getItem(String itemID) {
+    CatalogItem item;
+    if (itemID == null) {
+      return(null);
+    }
+    for(int i=0; i<items.length; i++) {
+      item = items[i];
+      if (itemID.equals(item.getItemID())) {
+        return(item);
+      }
+    }
+    return(null);
+  }    
+}
